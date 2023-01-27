@@ -22,14 +22,14 @@ void loop()
   Serial.println(val);
   }
 
-  if( val == 'F') // Forward
+  if( val == 'U') // Forward
     {
       digitalWrite(m1a, HIGH);
       digitalWrite(m1b, LOW);
       digitalWrite(m2a, HIGH);
       digitalWrite(m2b, LOW);  
     }
-  else if(val == 'B') // Backward
+  else if(val == 'D') // Backward
     {
       digitalWrite(m1a, LOW);
       digitalWrite(m1b, HIGH);
@@ -52,35 +52,35 @@ void loop()
     digitalWrite(m2b, LOW); 
     }
     
-  else if(val == 'S') //Stop
+  else if(val == 'T') //Stop
     {
     digitalWrite(m1a, LOW);
     digitalWrite(m1b, LOW);
     digitalWrite(m2a, LOW);
     digitalWrite(m2b, LOW); 
     }
-  else if(val == 'I') //Forward Right
+  else if(val == 'F') //Forward Right
     {
     digitalWrite(m1a, HIGH);
     digitalWrite(m1b, LOW);
     digitalWrite(m2a, LOW);
     digitalWrite(m2b, LOW);
     }
-  else if(val == 'J') //Backward Right
+  else if(val == 'H') //Backward Right
     {
     digitalWrite(m1a, LOW);
     digitalWrite(m1b, HIGH);
     digitalWrite(m2a, LOW);
     digitalWrite(m2b, LOW);
     }
-  else if(val == 'G') //Forward Left
+  else if(val == 'E') //Forward Left
     {
     digitalWrite(m1a, LOW);
     digitalWrite(m1b, LOW);
     digitalWrite(m2a, HIGH);  
     digitalWrite(m2b, LOW);
     }
-  else if(val == 'H') //Backward Left
+  else if(val == 'G') //Backward Left
     {
     digitalWrite(m1a, LOW);
     digitalWrite(m1b, LOW);
