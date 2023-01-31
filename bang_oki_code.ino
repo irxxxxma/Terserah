@@ -5,7 +5,6 @@ const int LeftForward = 11;// L298N control pins
 const int LeftBackward = 12;
 const int RightForward = 9;
 const int RightBackward = 10;
-char val;
 
 #define trig_pin 7 //sensor pins - analog input 1
 #define echo_pin 8 //analog input 2
@@ -141,78 +140,3 @@ void turnLeft(){
   digitalWrite(LeftBackward, LOW);
   digitalWrite(RightBackward, LOW);
 }
-
-{
-  while (Serial.available() > 0)
-  {
-  val = Serial.read();
-  Serial.println(val);
-  }
-
-  if( val == 'F') // Forward
-    {
-      digitalWrite(RightForward, HIGH);
-      digitalWrite(RightBackward, LOW);
-      digitalWrite(LeftForward, HIGH);
-      digitalWrite(LeftBackward, LOW);  
-    }
-  else if(val == 'B') // Backward
-    {
-      digitalWrite(RightForward, LOW);
-      digitalWrite(RightBackward, HIGH);
-      digitalWrite(LeftForward, LOW);
-      digitalWrite(LeftBackward, HIGH); 
-    }
-  
-  else if(val == 'L') //Left
-    {
-    digitalWrite(RightForward, LOW);
-    digitalWrite(RightBackward, LOW);
-    digitalWrite(LeftForward, HIGH);
-    digitalWrite(LeftBackward, LOW);
-    }
-  else if(val == 'R') //Right
-    {
-    digitalWrite(RightForward, HIGH);
-    digitalWrite(RightBackward, LOW);
-    digitalWrite(LeftForward, LOW);
-    digitalWrite(LeftBackward, LOW); 
-    }
-    
-  else if(val == 'S') //Stop
-    {
-    digitalWrite(RightForward, LOW);
-    digitalWrite(RightBackward, LOW);
-    digitalWrite(LeftForward, LOW);
-    digitalWrite(LeftBackward, LOW); 
-    }
-  else if(val == 'I') //Forward Right
-    {
-    digitalWrite(RightForward, HIGH);
-    digitalWrite(RightBackward, LOW);
-    digitalWrite(LeftForward, LOW);
-    digitalWrite(LeftBackward, LOW);
-    }
-  else if(val == 'J') //Backward Right
-    {
-    digitalWrite(RightForward, LOW);
-    digitalWrite(RightBackward, HIGH);
-    digitalWrite(LeftForward, LOW);
-    digitalWrite(LeftBackward, LOW);
-    }
-  else if(val == 'G') //Forward Left
-    {
-     digitalWrite(RightForward, LOW);
-     digitalWrite(RightBackward, LOW);
-     digitalWrite(LeftForward, HIGH);  
-     digitalWrite(LeftBackward, LOW);
-    }
-  else if(val == 'H') //Backward Left
-    {
-     digitalWrite(RightForward, LOW);
-     digitalWrite(RightBackward, LOW);
-     digitalWrite(LeftForward, LOW);
-     digitalWrite(LeftBackward, HIGH); 
-    }
-}
-
